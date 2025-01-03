@@ -30,7 +30,7 @@ const BlogSwiper = ({ blogs }) => {
       >
         {blogs.map((blog, index) => (
           <SwiperSlide key={index}>
-            <div className="member">
+            <div className="member" data-aos="fade-up" data-aos-delay="300">
               <div className="pic">
                 <img src={blog.image} alt={blog.title} className="img-fluid" />
               </div>

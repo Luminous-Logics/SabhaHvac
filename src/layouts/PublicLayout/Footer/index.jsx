@@ -1,7 +1,7 @@
 import React from "react";
-import images from "../../../assets/images";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/images/logo-white.svg";
 
 const Footer = () => {
   return (
@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="container footer-top">
           <div className="col-md-12 my-4">
             <Link className="logo d-flex align-items-center">
-              <img src={images.logo} alt="sabah hvac"/>
+              <img src={logo} alt="sabah hvac"/>
             </Link>
           </div>
           <div className="row gy-4">
             <div className="col-lg-6 col-md-6 footer-about">
               <div className="footer-contact pt-3">
-                <h2>Your Comfort is Our Priority – Contact Sabah Today and Breathe Easy!</h2>
+                <h2>The Best HVAC Contracting Company in Kuwait!</h2>
               </div>
             </div>
 
@@ -33,11 +33,7 @@ const Footer = () => {
                 </div>
                 <div className="d-flex mt-4">
                   <div>
-                    <Icon
-                      icon="heroicons:map-pin-16-solid"
-                      width="32"
-                      height="32"
-                    />
+                    <Icon icon="heroicons:map-pin-16-solid"  width="32" height="32"/>
                   </div>
                   <div className="data-contact">
                     <p className="mb-1 contact-p">
@@ -50,7 +46,7 @@ const Footer = () => {
             </div>
 
             <div className="col-lg-3 col-md-12 footer-links">
-              <p className="whatsup"><Icon icon="logos:whatsapp-icon" width="20" height="20" className='pr-1' /> Talk to us on WhatsApp</p>
+              <p className="whatsup"><Icon icon="logos:whatsapp-icon" width="20" height="20" className='pr-1'/> Talk to us on WhatsApp</p>
               <ul>
               <li className="mt-4"><a className="dropdown-item" href="#hvacsolutions">Expert Solutions</a></li>
                 <li><a  href="/#why-sabah">Why Sabah?</a></li>

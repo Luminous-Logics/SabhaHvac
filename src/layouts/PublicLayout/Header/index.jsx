@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import images from "../../../assets/images";
 import { Icon } from '@iconify/react';
+import logo from "../../../assets/images/logo-white.svg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,8 +32,8 @@ const Header = () => {
     <header id="header" className={`header d-flex align-items-center fixed-top ${isScrolled ? "scrolled" : ""}`}>
       <div className="container-fluid container-xl position-relative d-flex align-items-center">
         {/* Logo */}
-        <a to="/" className="logo d-flex align-items-center me-auto">
-          <img className="logo-main" src={images.logo} alt="Sabah Hvac"/>
+        <a href="/" className="logo d-flex align-items-center me-auto">
+          <img className="logo-main" src={logo} alt="Sabah Hvac"/>
         </a>
         {/* Navigation Menu */}
         <nav id="navmenu" className="navmenu">

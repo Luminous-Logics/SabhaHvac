@@ -82,7 +82,7 @@
     --heading-color: #ffffff;
     color: var(--default-color);
     background-color: var(--background-color);
-    padding: 20px 0;
+    padding: 10px 0;
     transition: all 0.5s;
     z-index: 997;
   }
@@ -93,6 +93,11 @@
   
   .header .logo img {
     margin-right: 8px;
+    width: 250px;
+    @media(max-width:600px)
+    {
+      width: 100%;
+    }
   }
   
   .header .logo h1 {
@@ -486,6 +491,12 @@
   
   .footer .footer-links ul li {
     padding: 10px 0;
+    a{
+      &:hover{
+        color:#5eb1bc
+      }
+    }
+    
   }
   
   .footer .footer-links ul li:first-child {
@@ -493,9 +504,10 @@
   }
   
   .footer .footer-links ul a {
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    color: #fff;
     display: inline-block;
     line-height: 1;
+    
     
   }
   
@@ -945,11 +957,15 @@
   .features .features-data
   {
     justify-content: center;
+  
+      li{
+        padding: 10px;
+    }
   }
   
   .features .nav-link {
     color: #14495D;
-    padding: 5px 20px;
+    padding: 0px;
     transition: 0.3s;
     border-radius: 0;
     display: flex;
@@ -1088,12 +1104,16 @@
         display: none;
     }
     .service-img{
-        opacity: 0.5;
+        opacity: 0.2;
       }
       .service-details
       {
         display: block;
-        padding:20px;
+        padding:10px;
+        @media(max-width:600px)
+        {
+          padding: 0.2rem;
+        }
       }
 
   }
@@ -1199,7 +1219,7 @@
         color: #fff;
         font-size: 1.7rem;
         margin-bottom: 0rem;
-        font-weight: 300;
+        font-weight: 400;
         @media(max-width:600px)
         {
           font-size: 0.9rem;
@@ -1228,9 +1248,11 @@
     {
       display: flex;
       justify-content: space-between;
+      padding-top: 1rem;
       @media(max-width:600px)
       {
         display: block;
+        padding-top: 0.25rem;
       }
     }
     .left-data
@@ -1241,17 +1263,20 @@
           width: 100%;
         }
         ul{
+          list-style: none;
+          padding-left: 0.5rem;
            li{
+            padding-left: 0rem;
             p{
               color: #14495D;
               font-size: 0.9rem;
               margin-bottom: 0.5rem;
               text-align: justify;
               line-height: 1rem;
-              // @media(max-width:600px)
-              //   {
-              //     font-size:0.8rem;
-              //   }
+              @media(max-width:600px)
+                {
+                  font-size:0.8rem;
+                }
                     }
            }
         }
@@ -1299,9 +1324,11 @@
       .btn-started
       {
         color: #fff!important;
-        background: #00000065!important;
-        border-radius: 15px!important;
+        background: #144a5d9a!important;
         cursor: pointer;
+        &:hover{
+          background: #14495D!important;
+        }
         @media(max-width:600px)
         {
           font-size: 0.8rem !important;
@@ -1500,11 +1527,13 @@
     {
       background-color: #fff;
       border-radius: 10px;
+      align-items: center;
     }
 
     .swiper-tabs-container {
       padding: 20px;
       margin: auto;
+      padding-top: 30px;
     }
     
    /*--------------------------------------------------------------
@@ -1513,6 +1542,7 @@
  
   .blogs .member {
     position: relative;
+
   }
   
   .blogs .member .pic {
@@ -1522,6 +1552,10 @@
 
   .blogs .member .pic img{
     width: 100%;
+    transition: 0.6s;
+    &:hover{
+      transform: scale(1.2);
+    }
   }
   
   .blogs .member .member-info {
@@ -1547,6 +1581,7 @@
     color: #fff;
     width: 80%;
     line-height: 22px;
+    cursor: pointer;
   }
   
   .blogs .member span {
@@ -1588,11 +1623,10 @@
 {
   background: #14495D!important;
   color: #fff !important;
-  border-radius: 12px!important;
 }
-.border-radius-15
+.border-radius-10
 {
-  border-radius: 12px!important;
+  border-radius: 8px!important;
 }
 
 .primary-text
@@ -1650,31 +1684,6 @@
   }
 }
 
-/* Basic styles for the button */
-.scroll-button {
-  padding: 6px;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-/* When the button becomes fixed */
-.scroll-button.fixed {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-
-/* Optional: Add a hover effect */
-.scroll-button:hover {
-  background-color: darkblue;
-}
 
 .mt-25{
   margin-top: 25rem;
@@ -1721,6 +1730,14 @@
     text-align: right;
     display: flex;
     justify-content: end;
+    svg{
+      margin-right: 0.3rem;
+    }
+    @media(max-width:600px)
+    {
+      text-align: left;
+    justify-content: start;
+    }
   }
 }
 
@@ -1759,6 +1776,78 @@
   border:0px;
   top:-10px;
   span{
-    font-size: 2rem
+    font-size: 2rem;
+    color:#fff;
+    @media(max-width:600px)
+    {
+      color:#000;
+    }
+
   }
+}
+
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 10px;
+  background-color: #fff; /* WhatsApp green */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-button:hover {
+  transform: scale(1.1);
+}
+
+.pulsating {
+  animation: pulsate 1.5s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(242, 242, 242, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px 20px rgba(183, 205, 191, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media(max-width:600px)
+{
+  .tab-services
+  {
+    display: none!important;
+  }
+}
+
+.phone-ani
+{
+  background: #fefefe3d;
+  border-radius: 50%;
+  padding: 9px;
 }

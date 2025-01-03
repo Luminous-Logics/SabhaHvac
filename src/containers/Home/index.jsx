@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import images from "../../assets/images";
 import TabComponent from "../../components/TabComponent";
 import ContactModal from "../../components/ContactModal";
-import { Icon } from "@iconify/react";
 import ScheduleServiceLink from '../../components/ScheduleServiceLink'; // Default import
 import ScrollButton from "../../components/ScrollButton";
 import BlogSwiper from "../../components/BlogSwipper";
+import PhoneComponent from "../../components/PhoneComponent";
 
 const Home = () => {
   const blogs = [
@@ -90,7 +89,7 @@ const Home = () => {
                     </div>
                     <div className="right-data d-block">
                     <ScheduleServiceLink modalTarget="#contactModal" className={"btn-started"}>Schedule a Service</ScheduleServiceLink>                     
-                     <p><Link>Got queries? Talk to us</Link></p>
+                     
                     </div>
                   </div>
                 </div>
@@ -118,7 +117,6 @@ const Home = () => {
                     </div>
                     <div className="right-data d-block">
                     <ScheduleServiceLink modalTarget="#contactModal" className={"btn-started"}>Schedule a Service</ScheduleServiceLink>                     
-                    <p><Link>Got queries? Talk to us</Link></p>
                     </div>
                   </div>
                 </div>
@@ -144,8 +142,7 @@ const Home = () => {
                       </ul>
                     </div>
                     <div className="right-data d-block">
-                    <ScheduleServiceLink modalTarget="#contactModal" className={"btn-started"}>Schedule a Service</ScheduleServiceLink>                     
-                    <p><Link>Got queries? Talk to us</Link></p>
+                    <ScheduleServiceLink modalTarget="#contactModal" className={"btn-started"}>Schedule a Service</ScheduleServiceLink>                
                     </div>
                   </div>
                 </div>
@@ -169,8 +166,7 @@ const Home = () => {
                       </ul>
                     </div>
                     <div className="right-data d-block">
-                    <ScheduleServiceLink modalTarget="#contactModal" className={"btn-started"}>Schedule a Service</ScheduleServiceLink>                     
-                     <p><Link>Got queries? Talk to us</Link></p>
+                    <ScheduleServiceLink modalTarget="#contactModal" className={"btn-started"}>Schedule a Service</ScheduleServiceLink>                             
                     </div>
                   </div>
                 </div>
@@ -198,15 +194,7 @@ const Home = () => {
               </p>
             </div>
             <div className="col-md-3">
-              <div className="d-flex justify-content-end text-white">
-                <div className="justify-content-center d-flex align-items-center">                
-                  <Icon icon="mdi:phone" width="32" height="32" />
-                </div>
-                <div className="data-contact">
-                  <p className="mb-0">Contact Us</p>
-                  <p>+965 6609 9477</p>
-                </div>
-              </div>
+                <PhoneComponent />
             </div>
           </div>
           <div className="row gy-4 mt-4">
@@ -275,15 +263,7 @@ const Home = () => {
               <p className="why-para" data-aos="fade-up" data-aos-delay="200">Explore our comprehensive services designed to keep your spaces comfortable, energy-efficient, and worry-free all year round. We’ve got you covered with solutions tailored to your needs.</p>
             </div>
             <div className="col-md-3">
-            <div className="d-flex justify-content-end text-white">
-                <div className="justify-content-center d-flex align-items-center">
-                  <Icon icon="mdi:phone" width="32" height="32" />
-                </div>
-                <div className="data-contact">
-                  <p className=" mb-0">Contact Us</p>
-                  <p>+965 6609 9477</p>
-                </div>
-              </div>
+            <PhoneComponent />
             </div>
           </div>
         </div>
@@ -301,15 +281,7 @@ const Home = () => {
               <p className="why-para" data-aos="fade-up" data-aos-delay="200">Expert Advice, Seasonal Tips, and the Latest in HVAC Innovations to Keep You Comfortable</p>
             </div>
             <div className="col-md-3 align-content-center">
-            <div className="d-flex justify-content-end text-white align-items-end">
-                <div className="justify-content-center">
-                  <Icon icon="mdi:phone" width="32" height="32" />
-                </div>
-                <div className="data-contact">
-                  <p className="mb-0">Contact Us</p>
-                  <p>+965 6609 9477</p>
-                </div>
-              </div>
+            <PhoneComponent />
             </div>
           </div>
         </div>

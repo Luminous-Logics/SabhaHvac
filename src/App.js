@@ -3,15 +3,15 @@ import AppRoutes from './routes/AppRoutes';
 import '../src/scss/app.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'aos/dist/aos.css'; // Import AOS styles
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
-import AOS from 'aos'; // Import AOS library
+import 'aos/dist/aos.css'; 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import AOS from 'aos';
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in ms
-      once: true, // Whether animation should happen only once
+      duration: 1000, 
+      once: true, 
     });
 
     const handleScroll = () => {

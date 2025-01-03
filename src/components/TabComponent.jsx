@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, A11y } from "swiper/modules";
+import { Navigation, A11y, Autoplay  } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import images from "../assets/images";
@@ -65,7 +65,7 @@ const TabComponent = () => {
       id: "pills-ventilation",
       title: "Ventilation",
       heading: "Ventilation Services",
-      image: images.heating,
+      image: images.ventilation,
       subDetails: [
         {
           heading: "Duct Cleaning and Sealing",
@@ -94,7 +94,7 @@ const TabComponent = () => {
       id: "pills-hvac-Maintenance",
       title: "HVAC Maintenance",
       heading: "HVAC Maintenance Services",
-      image: images.heating,
+      image: images.hvacsystem,
       subDetails: [
         {
           heading: "Preventive Maintenance Contracts",
@@ -135,13 +135,13 @@ const TabComponent = () => {
     },
     {
       id: "pills-specialized",
-      title: "Specialized ",
-      heading: "Specialized Services",
+      title: "Duct Installation ",
+      heading: "Duct Installation Services",
       image: images.heating,
       subDetails: [
         {
-          heading: "Duct Fabrication and Installation",
-          content:"Custom ductwork fabrication and professional installation.",
+          heading: "Duct Installation",
+          content:"Professional Installation",
         },
         {
           heading: "Chilled Water Systems",
@@ -168,51 +168,44 @@ const TabComponent = () => {
 
       {/* Swiper Content */}
       <Swiper
-        modules={[Navigation, A11y]}
+        modules={[Navigation, A11y, Autoplay]}
         navigation={false}
         onSlideChange={(swiper) => setActiveTab(swiper.activeIndex)}
         initialSlide={activeTab}
         spaceBetween={30}
         slidesPerView={1}
+        autoplay={{
+          delay: 3000, // Delay in milliseconds
+          disableOnInteraction: false, // Keep autoplay active after user interaction
+        }}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
       >
         {tabData.map((tab, index) => (
           <SwiperSlide key={index}>
-            <div
-              className={`tab-pane fade ${activeTab === index ? "active show" : ""}`}
-              id={tab.id}
-              role="tabpanel"
-              aria-labelledby={`${tab.id}-tab`}
-            >
+            <div className={`tab-pane fade ${activeTab === index ? "active show" : ""}`} id={tab.id} role="tabpanel" aria-labelledby={`${tab.id}-tab`}>
               <div className="row">
                 <div className="col-md-4">
-                  <div className="feature-img">
-                    <img src={tab.image} alt="Sabah hvac" className="img-fluid" />
+                  <div className="feature-img" data-aos="fade-up" data-aos-delay="300" >
+                    <img src={tab.image} alt="Sabah hvac" className="img-fluid" style={{borderRadius:'10px'}} />
                   </div>
                 </div>
                 <div className="col-md-8">
                   <div className="features-detail">
-                    <h1>{tab.heading}</h1>
+                    <h1 data-aos="fade-up" data-aos-delay="300">{tab.heading}</h1>
                     <div className="row">
                       {tab.subDetails.map((detail, i) => (
                         <div className="col-md-6" key={i}>
                           <div className="sub-details">
-                            <h5>{detail.heading}</h5>
-                            <p>{detail.content}</p>
+                            <h5 data-aos="fade-up" data-aos-delay="300">{detail.heading}</h5>
+                            <p data-aos="fade-up" data-aos-delay="300">{detail.content}</p>
                           </div>
                         </div>
                       ))}
                     </div>
-                    <div
-                      className="d-flex mt-4"
-                      data-aos="fade-up"
-                      data-aos-delay="300"
-                    >
-                      <ScheduleServiceLink modalTarget="#contactModal">
-                                    Schedule a Service
-                                  </ScheduleServiceLink>
+                    <div className="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+                      <ScheduleServiceLink modalTarget="#contactModal">Schedule a Service</ScheduleServiceLink>
                     </div>
                   </div>
                 </div>
@@ -224,7 +217,7 @@ const TabComponent = () => {
 
         {/* Tab Navigation */}
         <ul
-        className="nav nav-pills mb-3 features-data mt-5"
+        className="nav nav-pills mb-3 features-data mt-5 tab-services"
         id="pills-tab"
         role="tablist"
       >
